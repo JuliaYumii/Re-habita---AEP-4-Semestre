@@ -52,6 +52,13 @@ A entidade principal do sistema (CRUD completo) é a **Família** (R1).
 
 **Fora do escopo desta versão:** acesso de doadores ou famílias ao sistema, versão web ou app de celular, várias instituições no mesmo banco, integração com o CadÚnico e controle de validade dos alimentos.
 
+## Perfis de uso
+
+| Perfil | O que faz |
+|---|---|
+| Assistente social / coordenador | Cadastra, edita e acompanha famílias e atendimentos |
+| Comunidade / público | Visualiza os pontos de atendimento no mapa |
+
 ## Cronograma (2º bimestre)
 
 | Semana | Período | Atividade | Requisito | Responsável |
@@ -162,3 +169,9 @@ Nesta 1ª entrega o repositório contém a estrutura do projeto, os diagramas e 
 - Cada integrante trabalha em uma branch por tarefa (ex.: `feature/cadastro-familia`) e abre pull request, revisado por outra integrante antes do merge.
 - Commits pequenos, com mensagem dizendo o que foi feito.
 - Versões marcadas no GitHub: `v0.1` (1ª entrega) e `v1.0` (2ª entrega).
+
+## Documentação
+
+- Diagrama de classes: 
+- Diagrama entidade-relacionamento (DER): a adicionar em `docs/`.
+- Documento da AEP (PDF da 1ª entrega): a adicionar em `docs/`.
