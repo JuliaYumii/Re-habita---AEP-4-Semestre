@@ -152,14 +152,6 @@ Conecte como `sa` no **SSMS** (Windows) ou na extensão **SQL Server (mssql)** d
 
 Copie `src/main/resources/db.properties.example` para `src/main/resources/db.properties` e ajuste servidor, usuário e senha se necessário. Esse arquivo não sobe para o GitHub.
 
-### 4. Usuário inicial do sistema
-
-| E-mail | Senha | Perfil |
-|--------|-------|--------|
-| coordenacao@rehabita.local | Rehabita@2026 | Coordenador |
-
-A senha fica gravada como hash PBKDF2 (`PBKDF2WithHmacSHA256`, 65536 iterações). Trocar no primeiro acesso.
-
 ## Como executar o sistema
 
 Nesta 1ª entrega o repositório contém a estrutura do projeto, os diagramas e os scripts do banco. O passo a passo para compilar e rodar a aplicação (JDK 21 + Maven) será incluído na 2ª entrega, conforme a semana 10 do cronograma.
