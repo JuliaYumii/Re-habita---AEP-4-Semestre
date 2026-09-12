@@ -190,7 +190,7 @@ Os scripts que criam essas tabelas ficam na pasta [`database/`](database) e são
 
 | Camada | Tecnologia |
 |--------|------------|
-| Linguagem | Java 21 (LTS) |
+| Linguagem | Java 21  |
 | Framework | Spring Boot |
 | Páginas | Thymeleaf |
 | Banco de dados | SQL Server Express (porta 1433) |
