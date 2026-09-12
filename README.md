@@ -1,12 +1,16 @@
 <p align="center">
-  <img src="docs/assets/banner.svg" alt="REHABITA" width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg">
+    <img src="docs/assets/banner.svg" alt="REHABITA" width="100%">
+  </picture>
 </p>
 
 <p align="center">
-  <a href="#requisitos"><img alt="Requisitos" src="https://img.shields.io/badge/requisitos-9-1B4965?style=for-the-badge"></a>
-  <a href="#regras-de-negócio"><img alt="Regras de negócio" src="https://img.shields.io/badge/regras%20de%20neg%C3%B3cio-7-2A9D8F?style=for-the-badge"></a>
-  <a href="#modelo-de-dados"><img alt="Tabelas" src="https://img.shields.io/badge/tabelas-11-E76F51?style=for-the-badge"></a>
-  <a href="#cronograma"><img alt="Entrega" src="https://img.shields.io/badge/1%C2%AA%20entrega-conclu%C3%ADda-F4A261?style=for-the-badge"></a>
+  <img alt="Java" src="https://img.shields.io/badge/Java-21-18181B?style=flat-square&logo=openjdk&logoColor=white">
+  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring%20Boot-27272A?style=flat-square&logo=springboot&logoColor=white">
+  <img alt="Thymeleaf" src="https://img.shields.io/badge/Thymeleaf-3F3F46?style=flat-square&logo=thymeleaf&logoColor=white">
+  <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-52525B?style=flat-square&logo=microsoftsqlserver&logoColor=white">
+  <img alt="Maven" src="https://img.shields.io/badge/Maven-71717A?style=flat-square&logo=apachemaven&logoColor=white">
 </p>
 
 <p align="center">
@@ -15,30 +19,21 @@
 
 ---
 
-## Sumário
+## Propósito
 
-- [Sobre o projeto](#-sobre-o-projeto)
-- [Objetivos de Desenvolvimento Sustentável](#-objetivos-de-desenvolvimento-sustentável)
-- [Problemas que o sistema resolve](#-problemas-que-o-sistema-resolve)
-- [Requisitos](#-requisitos)
-- [Regras de negócio](#-regras-de-negócio)
-- [Arquitetura](#-arquitetura)
-- [Modelo de dados](#-modelo-de-dados)
-- [Tecnologias](#-tecnologias)
-- [Estrutura do repositório](#-estrutura-do-repositório)
-- [Banco de dados](#-banco-de-dados)
-- [Como executar](#-como-executar)
-- [Cronograma](#-cronograma)
-- [Convenções de desenvolvimento](#-convenções-de-desenvolvimento)
-- [Equipe](#-equipe)
+> **Missão.** Tirar do improviso o trabalho de quem já ajuda, para que o pouco que chega vá para quem mais precisa.
 
----
+Paróquias, igrejas e projetos sociais de Maringá recebem doações o tempo todo e repassam para famílias da comunidade. O trabalho existe e funciona. O que falta é memória: quando o voluntário troca ou a procura aumenta, a informação se perde.
 
-## Sobre o projeto
+O REHABITA não substitui ninguém. Ele só guarda o que hoje está espalhado em cadernos, planilhas e conversas de WhatsApp.
 
-Paróquias, igrejas e projetos sociais de Maringá recebem doações (cesta básica, produtos de higiene, fraldas, roupas, cobertores) e repassam para famílias da comunidade que estão passando necessidade. Na maioria dos casos o controle fica em caderno, planilha ou grupo de WhatsApp. Funciona enquanto são poucas famílias, mas basta trocar o voluntário ou aumentar a procura para a informação começar a se perder.
-
-O **REHABITA** organiza esse ciclo dentro da instituição: a doação chega e entra no estoque, a família é cadastrada e visitada, e o que foi entregue fica registrado no histórico dela.
+| | Antes | Com o REHABITA |
+|---|---|---|
+| **Quantas cestas ainda temos?** | Alguém precisa ir contar no depósito. | Saldo de cada item, atualizado a cada entrada e saída. |
+| **Essa família já recebeu este mês?** | Depende de alguém lembrar. | O sistema avisa quando a entrega se repete em menos de 30 dias. |
+| **Quem fez a última visita?** | Está no caderno de alguém. | Histórico da família com data, responsável e observações. |
+| **Quem atender primeiro?** | Quem chegou primeiro. | Lista de prioridade por urgência e por tempo sem receber. |
+| **O que foi feito com o que doei?** | Difícil prestar contas. | Toda doação e toda entrega ficam registradas. |
 
 | | |
 |---|---|
@@ -51,7 +46,18 @@ Documento completo da 1ª entrega: [`docs/AEP2026_4_REHABITA.pdf`](docs/AEP2026_
 
 ---
 
-## Objetivos de Desenvolvimento Sustentável
+## Índice
+
+| Planejamento | Técnico | Projeto |
+|---|---|---|
+| [ODS da ONU](#ods-da-onu) | [Arquitetura](#arquitetura) | [Estrutura do repositório](#estrutura-do-repositório) |
+| [Problemas que resolve](#problemas-que-o-sistema-resolve) | [Modelo de dados](#modelo-de-dados) | [Roadmap](#roadmap) |
+| [Requisitos](#requisitos) | [Tecnologias](#tecnologias) | [Cronograma](#cronograma) |
+| [Regras de negócio](#regras-de-negócio) | | [Equipe](#equipe) |
+
+---
+
+## ODS da ONU
 
 | ODS | Como o REHABITA contribui |
 |-----|---------------------------|
@@ -110,8 +116,6 @@ Implementadas na camada `service` e, quando possível, reforçadas por restriç�
 
 O sistema tem interface web, mas o núcleo é o back-end em Java: as classes, as regras de negócio e o acesso ao banco. Durante o desenvolvimento cada parte é testada por um menu de terminal e só depois ligada às páginas.
 
-O código é dividido em camadas, cada uma com uma responsabilidade:
-
 ```
   páginas web / menu de terminal
               |
@@ -133,6 +137,13 @@ O código é dividido em camadas, cada uma com uma responsabilidade:
 | `util` | Coisas usadas por várias camadas. | ValidadorCpf, SenhaUtil |
 | `templates` | As páginas web e o menu de terminal usado nos testes. | familias.html, MenuTeste |
 
+**Padrões aplicados**
+
+- **MVC em camadas** — a interface não conhece SQL e o DAO não conhece regra de negócio.
+- **DAO** — todos os DAOs implementam a interface genérica `Dao<T>` com `@Override`, expondo as cinco operações do CRUD: `inserir`, `buscarPorId`, `listarTodos`, `atualizar` e `excluir`.
+- **Herança e polimorfismo** — `Pessoa` (abstrata) é herdada por `Responsavel`, `Membro` e `Usuario`; `MovimentacaoItem` (abstrata) é herdada por `ItemRecebido` e `ItemEntregue`, que sobrescrevem `aplicarNoEstoque()` de formas opostas (uma soma, a outra desconta).
+- **Consultas parametrizadas** — todo acesso ao banco usa parâmetros, nunca concatenação de texto, o que previne SQL injection.
+
 <details>
 <summary><b>Ver diagrama de classes</b></summary>
 
@@ -142,22 +153,20 @@ O código é dividido em camadas, cada uma com uma responsabilidade:
 
 </details>
 
-**Padrões aplicados**
-
-- **MVC em camadas** — a interface não conhece SQL e o DAO não conhece regra de negócio.
-- **DAO** — todos os DAOs implementam a interface genérica `Dao<T>` com `@Override`, expondo as cinco operações do CRUD: `inserir`, `buscarPorId`, `listarTodos`, `atualizar` e `excluir`.
-- **Herança e polimorfismo** — `Pessoa` (abstrata) é herdada por `Responsavel`, `Membro` e `Usuario`; `MovimentacaoItem` (abstrata) é herdada por `ItemRecebido` e `ItemEntregue`, que sobrescrevem `aplicarNoEstoque()` de formas opostas (uma soma, a outra desconta).
-- **Consultas parametrizadas** — todo acesso ao banco usa parâmetros, nunca concatenação de texto, o que previne SQL injection.
+<details>
+<summary><b>Ver organização em camadas</b></summary>
 
 <p align="center">
   <img src="docs/Diagramas/DAO.png" alt="Organização do código em camadas" width="620">
 </p>
 
+</details>
+
 > Arquivos editáveis (`.asta`) e em PDF na pasta [`docs/Diagramas/`](docs/Diagramas).
 
 ---
 
-## claud Modelo de dados
+## Modelo de dados
 
 11 tabelas no SQL Server. Correspondência entre as classes Java e as tabelas:
 
@@ -178,9 +187,14 @@ O código é dividido em camadas, cada uma com uma responsabilidade:
 | `Doacao` | `doacao` |  |
 | `Doador` | `doador` |  |
 
+<details>
+<summary><b>Ver diagrama do banco (DER)</b></summary>
+
 <p align="center">
   <img src="docs/Diagramas/DIAGRAMA%20DO%20BANCO%20DER.png" alt="Diagrama entidade-relacionamento" width="520">
 </p>
+
+</details>
 
 Os scripts que criam essas tabelas ficam na pasta [`database/`](database) e são entregues no 2º bimestre.
 
@@ -190,7 +204,7 @@ Os scripts que criam essas tabelas ficam na pasta [`database/`](database) e são
 
 | Camada | Tecnologia |
 |--------|------------|
-| Linguagem | Java 21  |
+| Linguagem | Java 21 |
 | Framework | Spring Boot |
 | Páginas | Thymeleaf |
 | Banco de dados | SQL Server Express (porta 1433) |
@@ -205,31 +219,91 @@ Os scripts que criam essas tabelas ficam na pasta [`database/`](database) e são
 
 ```
 Re-habita---AEP-4-Semestre/
-├── database/                      scripts SQL do banco (2º bimestre)
+│
+├── database/                       scripts SQL do banco        [2º bimestre]
+│
 ├── docs/
-│   ├── AEP2026_4_REHABITA.pdf     documento da 1ª entrega
+│   ├── AEP2026_4_REHABITA.pdf      documento da 1ª entrega
+│   ├── assets/                     banner e identidade visual
 │   └── Diagramas/
-│       ├── DIAGRAMA DE CLASSE.pdf / .asta
-│       ├── DAO.pdf / .asta        organização do código em camadas
-│       └── DIAGRAMA DO BANCO DER.png
+│       ├── DIAGRAMA DE CLASSE      .asta · .pdf · .png
+│       ├── DAO                     .asta · .pdf · .png
+│       └── DIAGRAMA DO BANCO DER   .png
+│
 ├── src/main/
-│   ├── java/br/com/rehabita/      código Java (2º bimestre)
-│   │   ├── model/                 classes de domínio e enums
-│   │   ├── controller/            recebe as ações da interface
-│   │   ├── service/               regras de negócio (RN1 a RN7)
-│   │   ├── dao/                   acesso ao banco de dados
-│   │   └── util/                  ValidadorCpf, SenhaUtil
+│   ├── java/br/com/rehabita/                                   [2º bimestre]
+│   │   ├── model/                  classes de domínio e enums
+│   │   ├── controller/             recebe as ações da interface
+│   │   ├── service/                regras de negócio (RN1 a RN7)
+│   │   ├── dao/                    acesso ao banco de dados
+│   │   └── util/                   ValidadorCpf, SenhaUtil
 │   └── resources/
-│       └── templates/             páginas HTML
+│       └── templates/              páginas HTML
+│
 ├── .gitignore
 └── README.md
 ```
 
-> As pastas `src/` e `database/` já estão criadas e organizadas conforme as camadas descritas em [Arquitetura](#-arquitetura). Elas recebem o código Java e os comandos do banco no 2º bimestre. Como o Git não versiona diretório vazio, cada uma contém um arquivo `.gitkeep`.
+As pastas marcadas com `[2º bimestre]` já estão criadas e organizadas conforme as camadas descritas em [Arquitetura](#arquitetura). Como o Git não versiona diretório vazio, cada uma contém um arquivo `.gitkeep`.
 
 ---
 
-## Equipe ❤️
+## Roadmap
+
+<p align="center">
+  <img alt="1ª entrega" src="https://img.shields.io/badge/1%C2%AA%20entrega-conclu%C3%ADda-18181B?style=for-the-badge">
+  <img alt="2ª entrega" src="https://img.shields.io/badge/2%C2%AA%20entrega-em%20desenvolvimento-A1A1AA?style=for-the-badge">
+</p>
+
+**1º bimestre — planejamento e estrutura**
+
+- [x] Levantamento das dores e das partes interessadas
+- [x] Escopo com 9 requisitos e 7 regras de negócio
+- [x] Diagrama de classes com herança, composição e polimorfismo
+- [x] Modelagem do banco (11 tabelas) e DER
+- [x] Repositório estruturado por camadas
+
+**2º bimestre — implementação**
+
+- [ ] Classes de domínio e enums
+- [ ] Conexão com o SQL Server e scripts do banco
+- [ ] CRUD completo de famílias (entidade principal)
+- [ ] Atendimentos, entregas e controle de estoque
+- [ ] Consultas, lista de prioridade e relatórios
+- [ ] README com o passo a passo de execução
+
+---
+
+## Cronograma
+
+Planejamento do 2º bimestre. A mesma tabela consta no documento da 1ª entrega.
+
+| Semana | Período | Atividade | Requisito | Responsável |
+|:------:|:-------:|-----------|:---------:|:-----------:|
+| 1 | 14/09 a 20/09 | Criar o projeto Spring Boot e as pastas do código | – | Julia O. |
+| 1 | 14/09 a 20/09 | Instalar o SQL Server e rodar os scripts do banco | – | Amanda |
+| 2 | 21/09 a 27/09 | Escrever as classes de pessoas: Pessoa, Responsavel, Membro e Usuario | R1, R2, R8 | Julia Y. |
+| 2 | 21/09 a 27/09 | Fazer a conexão do sistema com o banco funcionar | – | Amanda |
+| 3 | 28/09 a 04/10 | Cadastro de famílias: gravar, buscar, listar, editar e excluir | R1 | Amanda |
+| 3 | 28/09 a 04/10 | Tela de login e cadastro de usuários | R8 | Julia O. |
+| 4 | 05/10 a 11/10 | Páginas de lista e cadastro de família | R1 | Julia Y. |
+| 4 | 05/10 a 11/10 | Cadastro dos membros da família | R2 | Julia O. |
+| 5 | 12/10 a 18/10 | Registro das visitas feitas à família | R3 | Julia Y. |
+| 5 | 12/10 a 18/10 | Mudança de status da família, com histórico | R7 | Amanda |
+| 6 | 19/10 a 25/10 | Cadastro dos itens e controle do saldo em estoque | R4 | Amanda |
+| 6 | 19/10 a 25/10 | Registro das doações recebidas, somando no estoque | R5 | Julia O. |
+| 7 | 26/10 a 01/11 | Entrega de itens na visita, descontando do estoque | R6 | Julia Y. |
+| 7 | 26/10 a 01/11 | Testar as regras de estoque e de entrega repetida | R6 | Amanda |
+| 8 | 02/11 a 08/11 | Consultas por bairro, status e urgência, e lista de prioridade | R9 | Julia O. |
+| 8 | 02/11 a 08/11 | Relatório de estoque e menu de acordo com o perfil | R8, R9 | Julia Y. |
+| 9 | 09/11 a 15/11 | Testar o sistema inteiro e corrigir os erros encontrados | Todos | Amanda, Julia O. e Julia Y. |
+| 9 | 09/11 a 15/11 | Rodar o projeto do zero em outro computador | – | Julia Y. |
+| 10 | 16/11 a 22/11 | Escrever no README o passo a passo para rodar o sistema | – | Julia O. |
+| 10 | 16/11 a 22/11 | Revisão final do código e publicação da versão no GitHub | – | Amanda |
+
+---
+
+## Equipe
 
 | Integrante | Abreviação no cronograma |
 |------------|--------------------------|
@@ -239,4 +313,7 @@ Re-habita---AEP-4-Semestre/
 
 ---
 
-<p align="center">Projeto acadêmico desenvolvido para a Atividade de Estudo Programada (AEP) do curso de Engenharia de Software – Unicesumar, 2026.</p>
+<p align="center">
+  Projeto acadêmico desenvolvido para a Atividade de Estudo Programada (AEP)<br>
+  Curso de Engenharia de Software · Unicesumar · 2026
+</p>
