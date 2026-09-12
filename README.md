@@ -10,21 +10,12 @@
 </p>
 
 <p align="center">
-  <img alt="Java" src="https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white">
-  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white">
-  <img alt="Thymeleaf" src="https://img.shields.io/badge/Thymeleaf-005F0F?logo=thymeleaf&logoColor=white">
-  <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white">
-  <img alt="Maven" src="https://img.shields.io/badge/Maven-C71A36?logo=apachemaven&logoColor=white">
-  <img alt="Git" src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white">
-</p>
-
-<p align="center">
   <b>Um lugar só para a doação que chega, a família que precisa e a ajuda que foi entregue.</b>
 </p>
 
 ---
 
-## 📑 Sumário
+## Sumário
 
 - [Sobre o projeto](#-sobre-o-projeto)
 - [Objetivos de Desenvolvimento Sustentável](#-objetivos-de-desenvolvimento-sustentável)
@@ -43,7 +34,7 @@
 
 ---
 
-## 🏠 Sobre o projeto
+## Sobre o projeto
 
 Paróquias, igrejas e projetos sociais de Maringá recebem doações (cesta básica, produtos de higiene, fraldas, roupas, cobertores) e repassam para famílias da comunidade que estão passando necessidade. Na maioria dos casos o controle fica em caderno, planilha ou grupo de WhatsApp. Funciona enquanto são poucas famílias, mas basta trocar o voluntário ou aumentar a procura para a informação começar a se perder.
 
@@ -60,7 +51,7 @@ Documento completo da 1ª entrega: [`docs/AEP2026_4_REHABITA.pdf`](docs/AEP2026_
 
 ---
 
-## 🌍 Objetivos de Desenvolvimento Sustentável
+## Objetivos de Desenvolvimento Sustentável
 
 | ODS | Como o REHABITA contribui |
 |-----|---------------------------|
@@ -70,7 +61,7 @@ Documento completo da 1ª entrega: [`docs/AEP2026_4_REHABITA.pdf`](docs/AEP2026_
 
 ---
 
-## 🔍 Problemas que o sistema resolve
+## Problemas que o sistema resolve
 
 | Dor | Por que acontece | Resposta do sistema |
 |-----|------------------|---------------------|
@@ -83,7 +74,7 @@ Documento completo da 1ª entrega: [`docs/AEP2026_4_REHABITA.pdf`](docs/AEP2026_
 
 ---
 
-## 📋 Requisitos
+## Requisitos
 
 | Nº | Requisito |
 |:--:|-----------|
@@ -99,7 +90,7 @@ Documento completo da 1ª entrega: [`docs/AEP2026_4_REHABITA.pdf`](docs/AEP2026_
 
 ---
 
-## ⚖️ Regras de negócio
+## Regras de negócio
 
 Implementadas na camada `service` e, quando possível, reforçadas por restrições no próprio banco.
 
@@ -115,7 +106,7 @@ Implementadas na camada `service` e, quando possível, reforçadas por restriç�
 
 ---
 
-## 🧩 Arquitetura
+## Arquitetura
 
 O sistema tem interface web, mas o núcleo é o back-end em Java: as classes, as regras de negócio e o acesso ao banco. Durante o desenvolvimento cada parte é testada por um menu de terminal e só depois ligada às páginas.
 
@@ -166,7 +157,7 @@ O código é dividido em camadas, cada uma com uma responsabilidade:
 
 ---
 
-## 🗄️ Modelo de dados
+## claud Modelo de dados
 
 11 tabelas no SQL Server. Correspondência entre as classes Java e as tabelas:
 
@@ -195,7 +186,7 @@ Os scripts que criam essas tabelas ficam na pasta [`database/`](database) e são
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 | Camada | Tecnologia |
 |--------|------------|
@@ -210,7 +201,7 @@ Os scripts que criam essas tabelas ficam na pasta [`database/`](database) e são
 
 ---
 
-## 📁 Estrutura do repositório
+## Estrutura do repositório
 
 ```
 Re-habita---AEP-4-Semestre/
@@ -238,62 +229,7 @@ Re-habita---AEP-4-Semestre/
 
 ---
 
-## 💾 Banco de dados
-
-O modelo do banco já está definido (ver [Modelo de dados](#-modelo-de-dados) e o DER em [`docs/Diagramas/`](docs/Diagramas)).
-
-Os scripts de criação das tabelas ficam na pasta [`database/`](database) e são entregues no 2º bimestre, junto com o código.
-
----
-
-## ▶️ Como executar
-
-> **Status:** esta é a 1ª entrega. O repositório contém o planejamento, os diagramas e os scripts do banco. O código-fonte e o passo a passo completo de execução entram na 2ª entrega, conforme o cronograma abaixo.
-
----
-
-## 🗓️ Cronograma
-
-Planejamento do 2º bimestre. A mesma tabela consta no documento da 1ª entrega.
-
-| Semana | Período | Atividade | Requisito | Responsável |
-|:------:|:-------:|-----------|:---------:|:-----------:|
-| 1 | 14/09 a 20/09 | Criar o projeto Spring Boot e as pastas do código | – | Julia O. |
-| 1 | 14/09 a 20/09 | Instalar o SQL Server e rodar os scripts do banco | – | Amanda |
-| 2 | 21/09 a 27/09 | Escrever as classes de pessoas: Pessoa, Responsavel, Membro e Usuario | R1, R2, R8 | Julia Y. |
-| 2 | 21/09 a 27/09 | Fazer a conexão do sistema com o banco funcionar | – | Amanda |
-| 3 | 28/09 a 04/10 | Cadastro de famílias: gravar, buscar, listar, editar e excluir | R1 | Amanda |
-| 3 | 28/09 a 04/10 | Tela de login e cadastro de usuários | R8 | Julia O. |
-| 4 | 05/10 a 11/10 | Páginas de lista e cadastro de família | R1 | Julia Y. |
-| 4 | 05/10 a 11/10 | Cadastro dos membros da família | R2 | Julia O. |
-| 5 | 12/10 a 18/10 | Registro das visitas feitas à família | R3 | Julia Y. |
-| 5 | 12/10 a 18/10 | Mudança de status da família, com histórico | R7 | Amanda |
-| 6 | 19/10 a 25/10 | Cadastro dos itens e controle do saldo em estoque | R4 | Amanda |
-| 6 | 19/10 a 25/10 | Registro das doações recebidas, somando no estoque | R5 | Julia O. |
-| 7 | 26/10 a 01/11 | Entrega de itens na visita, descontando do estoque | R6 | Julia Y. |
-| 7 | 26/10 a 01/11 | Testar as regras de estoque e de entrega repetida | R6 | Amanda |
-| 8 | 02/11 a 08/11 | Consultas por bairro, status e urgência, e lista de prioridade | R9 | Julia O. |
-| 8 | 02/11 a 08/11 | Relatório de estoque e menu de acordo com o perfil | R8, R9 | Julia Y. |
-| 9 | 09/11 a 15/11 | Testar o sistema inteiro e corrigir os erros encontrados | Todos | Amanda, Julia O. e Julia Y. |
-| 9 | 09/11 a 15/11 | Rodar o projeto do zero em outro computador | – | Julia Y. |
-| 10 | 16/11 a 22/11 | Escrever no README o passo a passo para rodar o sistema | – | Julia O. |
-| 10 | 16/11 a 22/11 | Revisão final do código e publicação da versão no GitHub | – | Amanda |
-
----
-
-## 🤝 Convenções de desenvolvimento
-
-| Tema | Convenção |
-|------|-----------|
-| Branches | `main` recebe apenas código que compila; uma branch por tarefa (`feature/cadastro-familia`) |
-| Integração | Merge via pull request, revisado por outra integrante |
-| Commits | Pequenos e com mensagem descrevendo o que foi feito |
-| Nomenclatura | `CamelCase` para classes, `camelCase` para métodos e atributos |
-| Versões | `v0.1` (1ª entrega) e `v1.0` (2ª entrega) |
-
----
-
-## 👥 Equipe
+## Equipe ❤️
 
 | Integrante | Abreviação no cronograma |
 |------------|--------------------------|
