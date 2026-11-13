@@ -111,13 +111,3 @@ Após conectar no SSMS:
 
 Agora o SQL Server está configurado para receber conexões do Java via JDBC na porta 1433. Basta configurar a senha no arquivo `ConexaoBanco.java` e rodar o `Main.java`.
 
----
-
-## Problemas comuns
-
-| Erro | Causa | Solução |
-|------|-------|---------|
-| `Connection refused` | TCP/IP desabilitado ou porta errada | Repetir os passos 2 e 3 |
-| `Login failed for user 'sa'` | Senha errada ou conta SA desabilitada | Verificar a senha no SSMS → Segurança → Logons → sa |
-| `Cannot open database 'BancoREHABITA'` | Banco não foi criado | Executar o `schema.sql` no SSMS (passo 7) |
-| `No enum constant` | Valor no banco diferente do enum Java | Conferir se os valores no banco batem com os enums do código |
